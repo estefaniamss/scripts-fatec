@@ -3,9 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Geeks on Sale</title>
+    <title>The Burger</title>
     
-    <link rel="shortcut icon" href="http://clubedonerd.com/wp-content/uploads/2014/10/logo-clube-do-nerd.png" type="image/x-icon">
+    <link rel="shortcut icon" type="image/x-icon" href="img/02.jpg">
 
     <!-- Bootstrap -->
     <link rel="stylesheet" type="text/css"  href="css/bootstrap.css">
@@ -18,7 +18,14 @@
     <!-- Stylesheet -->
     <link rel="stylesheet" type="text/css"  href="css/style.css">
     <link rel="stylesheet" type="text/css" href="css/responsive.css">
+    <link rel="stylesheet" type="text/css" href="css/ideas.css">
+    <script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript" src="js/modernizr.custom.js"></script>
+
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/crud.js"></script>
 
   </head>
   <body>
@@ -30,16 +37,16 @@
       <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
-          <a class="navbar-brand" href="index.html">Geeks On Sale</a>
+          <a class="navbar-brand" href="index.html">The Burger</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav navbar-right">
             <li><a href="#tf-home" class="page-scroll">Home</a></li>
-            <li><a href="#tf-about" class="page-scroll">A Geeks</a></li>
-            <li><a href="#tf-works" class="page-scroll">Nossos Produtos</a></li>
-            <li><a href="#tf-contact" class="page-scroll">Sua Ideia</a></li>
+            <li><a href="#tf-about" class="page-scroll">The Burger</a></li>
+            <li><a href="#tf-works" class="page-scroll">Nossos Hamburgers</a></li>
+            <li><a href="#tf-contact" class="page-scroll">Contato</a></li>
           </ul>
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
@@ -50,8 +57,8 @@
     <div id="tf-home" class="text-center">
         <div class="overlay">
             <div class="content">
-                <h1>Bem vindo a <strong><span class="color">Geeks On Sale</span></strong></h1>
-                <p class="lead">Nós somos uma loja<strong> de coisas nerds</strong></p>
+                <h1><strong><span class="color">The Burger</span></strong> Hamburgers</h1>
+                <p class="lead">Reinventamos o jeito de fazer<strong> hamburgers</strong></p>
                 <a href="#tf-about" class="fa fa-angle-down page-scroll"></a>
             </div>
         </div>
@@ -63,13 +70,13 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                    <img src="img/02.png" class="img-responsive">
+                    <img src="img/02.jpg" class="img-responsive">
                 </div>
                 <div class="col-md-6">
                     <div class="about-text">
                         <div class="section-title">
-                            <h4>Geeks On Sale</h4>
-                            <h2>Uma loja de produtos<strong> geeks</strong></h2>
+                            <h4>The Burger</h4>
+                            <h2>A mais nova hamburgeria do<strong> vale</strong></h2>
                             <hr>
                             <div class="clearfix"></div>
                         </div>
@@ -129,7 +136,7 @@
                 <div class="col-sm-6 col-md-3 col-lg-3 dec utl">
                     <div class="portfolio-item">
                         <div class="hover-bg">
-                            <a href="#">
+                            <a class="add">
                                 <div class="hover-text">
                                     <h4>Canecas</h4>
                                     <small>Veja mais</small>
@@ -145,7 +152,7 @@
                 <div class="col-sm-6 col-md-3 col-lg-3 dec utl">
                     <div class="portfolio-item">
                         <div class="hover-bg">
-                            <a href="#">
+                            <a class="add">
                                 <div class="hover-text">
                                     <h4>Quadros</h4>
                                     <small>Veja mais</small>
@@ -161,7 +168,7 @@
                 <div class="col-sm-6 col-md-3 col-lg-3 dec">
                     <div class="portfolio-item">
                         <div class="hover-bg">
-                            <a href="#">
+                            <a class="add">
                                 <div class="hover-text">
                                     <h4>Action Figures</h4>
                                     <small>Veja mais</small>
@@ -177,7 +184,7 @@
                 <div class="col-sm-6 col-md-3 col-lg-3 mod utl">
                     <div class="portfolio-item">
                         <div class="hover-bg">
-                            <a href="#">
+                            <a class="add">
                                 <div class="hover-text">
                                     <h4>Bottons</h4>
                                     <small>Veja mais</small>
@@ -193,7 +200,7 @@
                 <div class="col-sm-6 col-md-3 col-lg-3 utl">
                     <div class="portfolio-item">
                         <div class="hover-bg">
-                            <a href="#">
+                            <a class="add">
                                 <div class="hover-text">
                                     <h4>Cadernetas</h4>
                                     <small>Veja mais</small>
@@ -209,7 +216,7 @@
                 <div class="col-sm-6 col-md-3 col-lg-3 utl">
                     <div class="portfolio-item">
                         <div class="hover-bg">
-                            <a href="#">
+                            <a class="add">
                                 <div class="hover-text">
                                     <h4>Pen Drives</h4>
                                     <small>Veja mais</small>
@@ -225,7 +232,7 @@
                 <div class="col-sm-6 col-md-3 col-lg-3 mod">
                     <div class="portfolio-item">
                         <div class="hover-bg">
-                            <a href="#">
+                            <a class="add">
                                 <div class="hover-text">
                                     <h4>Feminino</h4>
                                     <small>Veja mais</small>
@@ -241,7 +248,7 @@
                 <div class="col-sm-6 col-md-3 col-lg-3 mod">
                     <div class="portfolio-item">
                         <div class="hover-bg">
-                            <a href="#">
+                            <a class="add">
                                 <div class="hover-text">
                                     <h4>Masculino</h4>
                                     <small>Veja mais</small>
@@ -258,10 +265,29 @@
         </div>
     </div>
 
+    <div id="tf-contact" class="text-center">
+    <div class="container">
+    <h2>Meus <strong><span class="color"> Pedidos</span></strong></h2><br></br>
+    <table  class="table table-striped table-hover">
+        <thead>
+        <tr>
+          <th style="text-align: center;">Id</th>
+          <th style="text-align: center;">Data Pedido</th>
+          <th style="text-align: center;">Descrição</th>
+        </tr>
+        </thead>
+        <tbody id="tabela-categoria">
+
+        </tbody>
+    </table>
+    </div>
+    </div>
+
 
 
     <!-- Contact Section
     ==========================================-->
+
     <div id="tf-contact" class="text-center">
         <div class="container">
 
@@ -269,7 +295,7 @@
                 <div class="col-md-8 col-md-offset-2">
 
                     <div class="section-title center">
-                        <h2>Não encontrou? Dê sua idéia <strong><span class="color"> Geek</span></strong></h2>
+                        <h2>Não encontrou? Dê sua <strong><span class="color"> Sugestão</span></strong></h2>
                         <div class="line">
                             <hr>
                         </div>
@@ -277,6 +303,7 @@
                         <small><em>Quer comprar algo diferente e não encontrou? Que tal nos enviar os itens que você quer? Sua lista pode virar um novo produto e você será avisado que o item geek que você desejava está disponível!!</em></small>            
                     </div>
 
+<!--==========================================-->   
                     <form>
                         <div class="row">
                             <div class="col-md-6">
@@ -291,15 +318,9 @@
                                     <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Digite seu email">
                                 </div>
                             </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="exampleInputTelefone1">Nome do Item</label>
-                                    <input type="telefone" class="form-control" id="exampleInputTelefone1" placeholder="Digite o Item">
-                                </div>
-                            </div>
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputMensagem1">Faça um pequena descrição do Item</label>
+                            <label for="exampleInputMensagem1">Deixe aqui sua sugestão</label>
                             <textarea class="form-control" rows="3" placeholder="Digite aqui a sua sugestão"></textarea>
                         </div>
                         
