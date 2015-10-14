@@ -64,7 +64,29 @@
 });*/
 
 $(document).ready(function () {
+var $formGroups = $('div.form-group');
+var $helpBlocks = $('span.help-block');
+var $nomeInput = $('#nome-input');
 var $tabelaCategoria = $('#tabela-categoria');
+var $comprador = $('#comprador');
+var $formWell = $('#form-well');
+
+
+
+function limparErros() {
+  $formGroups.removeClass('has-error');
+  $helpBlocks.text('');
+}
+
+function mostrarErros(erros) {
+  console.log('dentro mostrarErros')
+  var helpBlockPrefixo = '#help-block-';
+  var formGroupPrefixo = '#form-group-';
+    $.each(erros,function(propriedade, valorDaPropriedade){
+      $(helpBlockPrefixo + propriedade).text(valorDaPropriedade);
+      $(formGroupPrefixo + propriedade).addClass('has-error');
+    });
+}
 
 function adicionarCategoria(categoria) {
     var linha = '<tr>';
@@ -85,13 +107,43 @@ function adicionarCategoria(categoria) {
 
   }
 
-$('a.add').on('click', function(){
-  var $this = $(this);//o proprio parágrafo
- 
-  var la=( $this.find('h4').text() );
-  adicionarCategoria({"id": 5910974510923776,
-        "nome": la,
-        "creation": "09/08/2015 16:44:20"});
- });
+ function listarCategorias(categorias){
+    $.each(categorias, function(i, cat){
+      adicionarCategoria(cat);
+    })
+  }
+
+var categoriasFake=[{"id": 5910974510923776, "nome": "Big Burger", "creation": "09/08/2015 16:44:20"}, {"id": 6473924464345088, "nome": "Dog The Burger", "creation": "09/08/2015 17:29:42"}, {"id": 5275456790069248, "nome": "Prime Burger", "creation": "09/09/2015 09:12:05"}];
+  listarCategorias(categoriasFake);
+
+
+          $('a.add').on('click', function(){
+              var $this = $(this);//o proprio parágrafo
+              var la=( $this.find('h4').text() );
+              console.log(la);
+                  if (la === 'Masculino') {
+                      alert("Desculpe, esse produto está indisponível.");
+                  } else {
+                    adicionarCategoria({"id": 5910974510923776,
+                        "nome": la,
+                        "creation": "09/08/2015 16:44:20"});
+                  }
+          });
+
+
+  $('#form-categoria').submit(function (evento) {
+    evento.preventDefault();
+    limparErros();
+    var nome = $nomeInput.val();
+    console.log('dentro do form')
+          if (nome === ''){
+            console.log('vazio')
+            mostrarErros({'nome': 'Campo Obrigatório'})
+          } else {
+            $comprador.html(nome);
+            $formWell.slideToggle(); 
+          } 
+        $nomeInput.val('');  
+  });
 
 });

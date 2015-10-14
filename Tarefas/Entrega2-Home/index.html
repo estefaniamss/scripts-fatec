@@ -265,23 +265,44 @@
         </div>
     </div>
 
+
     <div id="tf-contact" class="text-center">
     <div class="container">
-    <h2>Meus <strong><span class="color"> Pedidos</span></strong></h2><br></br>
+    <h2><strong>Pedidos</strong> de <strong><span class="color"> <span id="comprador"></span></span></strong></h2><br></br>
+
+
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+            <div id="form-well" class="well">
+        
+        <h3 class="text-center">Criar Pedido</h3>
+            <form id="form-categoria" action="#">
+
+              <div id="form-group-nome" class="form-group">
+                <label for="nome-input" class="control-label">Nome </label>
+                <input id="nome-input" type="text" class="form-control" name="nome" value="">
+                <span id="help-block-nome" class="help-block"></span></div>
+
+              <button type="submit" class="btn btn-success">Save</button>
+            </form>
+            </div>
+
+
     <table  class="table table-striped table-hover">
         <thead>
         <tr>
-          <th style="text-align: center;">Id</th>
+          <th style="text-align: center;">Número do Hamburger</th>
           <th style="text-align: center;">Data Pedido</th>
-          <th style="text-align: center;">Descrição</th>
+          <th style="text-align: center;">Nome do Hamburger</th>
         </tr>
         </thead>
         <tbody id="tabela-categoria">
 
         </tbody>
     </table>
-    </div>
-    </div>
+
 
 
 
